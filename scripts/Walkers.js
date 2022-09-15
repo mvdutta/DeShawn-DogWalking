@@ -1,5 +1,19 @@
 import { assignedCityNames, filterWalkerCitiesByWalker } from "./CityList.js"
 import { getWalkers } from "./database.js"
+const walkers = getWalkers()
+
+
+export const Walkers = () => {
+    let walkerHTML = "<ul>"
+
+    for (const walker of walkers) {
+        walkerHTML += `<li id="walker--${walker.id}">${walker.name}</li>`
+    }
+
+   return walkerHTML += "</ul>"
+
+}
+
 
 document.addEventListener(
     "click",  // This is the type of event
@@ -8,8 +22,7 @@ document.addEventListener(
             The target of a click event is the most specific HTML element
             that was clicked by the user.
         */
-        const itemClicked = clickEvent.target//this is a property of clickEvent. It will give us the HTML of the item we clicked. In this case, it will be an <li>
-        console.log(itemClicked)
+        const itemClicked = clickEvent.target//this is a property of clickEvent. It will give us the HTML of the item we clicked. In this 
 
         /*
             Only run the rest of the logic if a walker <li> was clicked
@@ -67,18 +80,4 @@ document.addEventListener(
     }
 )
 
-
-const walkers = getWalkers()
-
-
-export const Walkers = () => {
-    let walkerHTML = "<ul>"
-
-    for (const walker of walkers) {
-        walkerHTML += `<li id="walker--${walker.id}">${walker.name}</li>`
-    }
-
-   return walkerHTML += "</ul>"
-
-}
 

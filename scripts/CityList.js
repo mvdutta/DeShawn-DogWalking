@@ -22,7 +22,7 @@ export const filterWalkerCitiesByWalker = (walker) => {
     const assignmentsArray = [];
     //loop through walkerCities:
     for (let assignment of walkerCities) {
-        //check if the primary key (walker's id) of the walker equals the foreign key (walkerId in walkerCities) on the assignment:
+        //check if the primary key (walker.id) of the walker equals the foreign key (walkerId in walkerCities) on the assignment:
         if (assignment.walkerId === walker.id) {
             //if it does, add the current object to the array of assignments:
             assignmentsArray.push(assignment)

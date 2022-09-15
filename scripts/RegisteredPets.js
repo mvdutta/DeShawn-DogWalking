@@ -23,7 +23,6 @@ document.addEventListener(
             that was clicked by the user.
         */
     const itemClicked = clickEvent.target; //this is a property of clickEvent. It will give us the HTML of the item we clicked. In this case, it will be an <li>
-    console.log(itemClicked);
 
     if (itemClicked.id.startsWith("pet")) {
         
